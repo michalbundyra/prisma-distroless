@@ -7,3 +7,14 @@ platform.getPlatform().then(function (x) {
 }).finally(function () {
     console.log('Done!')
 });
+
+try {
+    var library = eval('require')('./lib/libquery_engine-debian-openssl-1.1.x.so.node')
+    var queryEngine = library.QueryEngine
+
+    console.log('QueryEngine: ', queryEngine)
+} catch (e) {
+    console.log('Error: ', e)
+} finally {
+    console.log('END')
+}

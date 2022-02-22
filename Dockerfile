@@ -16,6 +16,7 @@ WORKDIR /app
 ENV NODE_ENV production
 
 COPY --from=prisma_distroless_base /app/index.js ./index.js
+COPY --from=prisma_distroless_base /app/lib ./lib
 COPY --from=prisma_distroless_base /app/node_modules ./node_modules
 
 CMD ["index.js"]

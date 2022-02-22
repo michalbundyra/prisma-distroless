@@ -13,4 +13,4 @@ jobs:
         run: docker build -t prisma_distroless:latest .
 
       - name: Run build container
-        run: docker run prisma_distroless:latest
+        run: docker run --rm prisma_distroless:latest
