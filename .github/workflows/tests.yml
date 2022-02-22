@@ -1,6 +1,4 @@
-on:
-  pull_request:
-  push:
+on: [push]
 
 concurrency:
   group: ${{ github.head_ref }}
