@@ -1,8 +1,5 @@
-on: [push]
-
-concurrency:
-  group: ${{ github.head_ref }}
-  cancel-in-progress: true
+on:
+  push:
 
 jobs:
   tests:
@@ -11,8 +8,6 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
 
       - name: Build docker image
         run: docker build -t prisma_distroless:latest .
