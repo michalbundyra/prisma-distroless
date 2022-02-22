@@ -1,0 +1,22 @@
+on:
+  pull_request:
+
+concurrency:
+  group: ${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Build docker image
+        run: docker build -t prisma_distroless:latest .
+
+      - name: Run build container
+        run: docker run prisma_distroless:latest

@@ -1,0 +1,10 @@
+{
+  "name": "prisma-distroless",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:michalbundyra/prisma-distroless.git",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/get-platform": "3.11.0-2.c549d63a33078062a5e6bc2336f000946f8de389"
+  }
+}
